@@ -57,28 +57,39 @@ a good person
 					<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
 						<div class="content">
 							<h2>爬蟲成果展示</h2>
-							<p>諾貝爾</p>
-							<p>#目標位置:https://www.yannick.com.tw/shop/productlist?Item1=01&Item2=0102&Item3=010203<br>
+							<p>爬取中華電信股票資訊</p>
+							<p>#目標: https://www.google.com/search?q=<br>
+								#TPE: 2412<br>
+    
 import requests<br>
-from bs4 import BeautifulSoup<br>
 
-resp = requests.get('https://www.yannick.com.tw/shop/productlist?Item1=01&Item2=0102&Item3=010203')<br>
-print(resp)<br>
+#網址後方加上個股資訊. ex中華電信: TPE: 2412<br>
+targetURL = 'https://www.google.com/search?q='<br>
+
+def get_stock_page(url, stock_id):<br>
+    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '<br>
+                             'AppleWebKit/537.36 (KHTML, like Gecko) '<br>
+                             'Chrome/66.0.3359.181 Safari/537.36'}<br>
+    resp = requests.get(url + stock_id, headers=headers)<br>
+    if resp.status_code != 200:<br>
+        print('Invalid url:', resp.url)
+        return None
+    else:
+        return resp.text<br>
+  
 
 
-soup = BeautifulSoup(resp.text, 'html.parser')<br>
-#整張HTML
-print(soup)<br>
-
-
-# 輸出排版後的 HTML 程式碼<br>
-print(soup.prettify())</p>
+if __name__ == '__main__':
+    page = get_stock_page(targetURL, 'TPE: 2412')<br>
+    
+    print(page)
+    </p>
 							<ul class="actions stacked">
 								<li><a href="#" class="button">Learn More</a></li>
 							</ul>
 						</div>
 						<div class="image">
-							<img src="https://dotblogsfile.blob.core.windows.net/user/yiru/2c32242d-e571-4cb6-9b87-3a925b1c978c/1605014210.png" alt="" />
+							<img src="https://dotblogsfile.blob.core.windows.net/user/yiru/1c4950c1-c1e0-47b5-9b2a-ad78d7e06fa8/1606394959.png" alt="" />
 						</div>
 					</section>
 
@@ -92,7 +103,7 @@ print(soup.prettify())</p>
 							</ul>
 						</div>
 						<div class="image">
-							<img src="images/spotlight03.jpg" alt="" />
+							<img src="https://dotblogsfile.blob.core.windows.net/user/yiru/1c4950c1-c1e0-47b5-9b2a-ad78d7e06fa8/1606397491.png" alt="" />
 						</div>
 					</section>
 
