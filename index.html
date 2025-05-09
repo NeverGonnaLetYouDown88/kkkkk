@@ -56,14 +56,29 @@ a good person
 				<!-- Spotlight -->
 					<section class="spotlight style1 orient-left content-align-left image-position-center onscroll-image-fade-in">
 						<div class="content">
-							<h2>Spotlight</h2>
-							<p>This is also a <strong>Spotlight</strong> element, and it's here because this demo would look a bit empty with just one spotlight. Like all spotlights, you can customize its <span class="demo-controls">appearance with a number of modifiers</span>, as well as assign it an optional <code>onload</code> or <code>onscroll</code> transition modifier (<a href="#reference-spotlight">details</a>).</p>
+							<h2>爬蟲成果展示</h2>
+							<p>諾貝爾</p>
+							<p>#目標位置:https://www.yannick.com.tw/shop/productlist?Item1=01&Item2=0102&Item3=010203<br>
+import requests<br>
+from bs4 import BeautifulSoup<br>
+
+resp = requests.get('https://www.yannick.com.tw/shop/productlist?Item1=01&Item2=0102&Item3=010203')<br>
+print(resp)<br>
+
+
+soup = BeautifulSoup(resp.text, 'html.parser')<br>
+#整張HTML
+print(soup)<br>
+
+
+# 輸出排版後的 HTML 程式碼<br>
+print(soup.prettify())</p>
 							<ul class="actions stacked">
 								<li><a href="#" class="button">Learn More</a></li>
 							</ul>
 						</div>
 						<div class="image">
-							<img src="images/spotlight02.jpg" alt="" />
+							<img src="https://dotblogsfile.blob.core.windows.net/user/yiru/2c32242d-e571-4cb6-9b87-3a925b1c978c/1605014210.png" alt="" />
 						</div>
 					</section>
 
