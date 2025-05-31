@@ -109,6 +109,7 @@ a good person
 										</ul>
 									</div>
 								</article>
+								</div>
 								<ul class="actions stacked">
     <li><a href="#" class="button">回首頁</a></li>
 </ul>
@@ -132,32 +133,9 @@ a good person
 						<div class="content">
 							<h2>爬蟲成果展示</h2>
 							<p>爬取有聲書網站Goldenaudiobooks</p>
-							<p>#目標: https://www.google.com/search?q=<br>
-								#TPE: 2412<br>
+							<p>網址:https://goldenaudiobook.net/</p>
     
-import requests<br>
 
-#網址後方加上個股資訊. ex中華電信: TPE: 2412<br>
-targetURL = 'https://www.google.com/search?q='<br>
-
-def get_stock_page(url, stock_id):<br>
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '<br>
-                             'AppleWebKit/537.36 (KHTML, like Gecko) '<br>
-                             'Chrome/66.0.3359.181 Safari/537.36'}<br>
-    resp = requests.get(url + stock_id, headers=headers)<br>
-    if resp.status_code != 200:<br>
-        print('Invalid url:', resp.url)
-        return None
-    else:
-        return resp.text<br>
-  
-
-
-if __name__ == '__main__':
-    page = get_stock_page(targetURL, 'TPE: 2412')<br>
-    
-    print(page)
-    </p>
 							<ul class="actions stacked">
 								<li><a href="#" class="button">Learn More</a></li>
 							</ul>
